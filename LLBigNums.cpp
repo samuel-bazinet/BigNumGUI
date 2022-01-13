@@ -691,6 +691,65 @@ void BigNum::operator =(const BigNum &toAss) {
 }
 
 /**
+ * @brief operator == compares 2 BigNum and returns true when they are equivalent
+ * 
+ * @param toComp the BigNum to be compare to this
+ * @return true when they are equivalent
+ * @return false when they are different
+ */
+bool BigNum::operator==(const BigNum &toComp) {
+
+    // temparary pointers are initiated
+    NumSlice *temp1 = this->base;
+    NumSlice *temp2 = toComp.base;
+
+    // we go to the end of the numbers
+    while (nullptr != temp1->next) {
+
+        if (nullptr == temp2->next) {
+
+            return false;
+
+        }
+
+        temp1 = temp1->next;
+        temp2 = temp2->next;
+
+    }
+
+    if (nullptr != temp2->next) {
+
+        return false;
+
+    }
+
+    // we go all the way down while comparing them to each other
+    while (nullptr != temp1->prev) {
+        
+        if (temp1->value != temp2->value || nullptr != temp2->prev) {
+            return false;
+        }
+
+        temp1 = temp1->prev;
+        temp2 = temp2->prev;
+
+    }
+
+    if (temp1->value != temp2->value) {
+        return false;
+    }
+
+    if (nullptr != temp2->prev) {
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+/**
  * @brief toString converts a BigNum to a string
  * 
  * @return std::string - the resulting string
@@ -774,13 +833,13 @@ std::ostream& operator<<(std::ostream& os, const BigNum& number) {
  * @param n the factorial to be calculated (n!)
  * @return BigNum - the resulting Factorial as a BigNum
  */
-BigNum factorial(int n) {
+BigNum factorial(int number) {
 
     // a BigNum is created
     BigNum out(1);
 
     // we loop through every number until we reach n
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= number; i++) {
 
         // the BigNum is multiplied by i to calculate the factorial
         out = out*i;
@@ -792,6 +851,20 @@ BigNum factorial(int n) {
 
 }
 
+BigNum factorial(BigNum number) {
+
+    BigNum out(1);
+
+    for (BigNum i(1); !(i == (number+1));  i += 1) {
+
+        out *= i;
+
+    }
+
+    return out;
+
+}
+/* 
 int main(int argc, char* argv[]) {
     using namespace std;
     /*
@@ -799,7 +872,7 @@ int main(int argc, char* argv[]) {
     if (argc == 2) {
         fac = atoi(argv[1]);
     }
-    */
+    
 
     // testing the int constructor
     BigNum test(123456789);
@@ -840,10 +913,14 @@ int main(int argc, char* argv[]) {
     BigNum tfac = factorial(20);
     
     cout << "100! = " << ohf << endl;
-    cout << "20! = " << tfac << endl;
+   /* cout << "20! = " << tfac << endl;
 
     cout << "Multiplying 100! by 20! = " << ohf*tfac << endl;
+
+    cout << "100! using BigNum as arg: " << factorial(BigNum(100)) << endl;
 
     return 0;
     
 }
+
+*/

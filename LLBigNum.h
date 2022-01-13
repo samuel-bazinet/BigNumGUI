@@ -48,10 +48,16 @@ class BigNum {
         void operator *=(const BigNum& number);
         BigNum multiplyHelper(NumSlice* ns, int counter);
         void operator =(const BigNum &toAss);
+        bool operator==(const BigNum &toComp);
         std::string toString();
+        
+        
 
         friend std::ostream& operator<<(std::ostream& os, const BigNum& number);
 
 };
+
+BigNum factorial(int number);
+BigNum factorial(BigNum number);
 
 #endif
