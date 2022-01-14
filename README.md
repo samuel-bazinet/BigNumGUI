@@ -17,9 +17,10 @@ This project is about making a GUI to interact with my BigNum class
 ## How to use:
 1. Enter a name for a number
 2. Enter a number
-3. Repeat if deisred
-4. Press of the operator buttons
-    - Make sure that the number of operator is matching the operators 
-5. Press the calculate button for the calculations to happen
-6. The result will be in the output
-7. Press the Clear button to clear the fields
+3. Press on the Add Number button to add them
+4. Repeat if deisred
+5. Press one the operator buttons to add them
+    - Make sure that the number of numbers is matching the operators 
+6. Press the calculate button for the calculations to happen
+7. The result will be in the output
+8. Press the Clear button to clear the fields

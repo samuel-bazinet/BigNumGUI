@@ -15,11 +15,12 @@ How to run
     - Then run **./a.out** to run the program
 
 How to use:
-- Enter a name for a number
-- Enter a number
-- Repeat if deisred
-- Press of the operator buttons
+1. Enter a name for a number
+2. Enter a number
+3. Press the Add Number button to add them
+4. Repeat if deisred
+5. Press on the operator buttons to add them
     - Make sure that the number of numbers is matching the operators 
-- Press the calculate button for the calculations to happen
-- The result will be in the output
-- Press the Clear button to clear the fields
+6. Press the calculate button for the calculations to happen
+7. The result will be in the output
+8. Press the Clear button to clear the fields
