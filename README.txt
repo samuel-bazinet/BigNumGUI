@@ -19,7 +19,7 @@ How to use:
 - Enter a number
 - Repeat if deisred
 - Press of the operator buttons
-    - Make sure that the number of operator is matching the operators 
+    - Make sure that the number of numbers is matching the operators 
 - Press the calculate button for the calculations to happen
 - The result will be in the output
 - Press the Clear button to clear the fields
